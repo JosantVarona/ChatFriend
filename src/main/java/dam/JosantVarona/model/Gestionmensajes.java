@@ -1,5 +1,6 @@
 package dam.JosantVarona.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +11,8 @@ public class Gestionmensajes {
         this.mensajes = new ArrayList<>();
     }
 
-    public void enviarMensakes(User receptor, User emisor, String mensaje) {
-        Message nuevoMensaje = new Message(receptor, emisor, mensaje);
+    public void enviarMensakes(User receptor, User emisor, String mensaje, LocalDateTime horafecha) {
+        Message nuevoMensaje = new Message(receptor, emisor, mensaje, horafecha);
         mensajes.add(nuevoMensaje);
         guardarMensajesXML();
     }

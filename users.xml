@@ -32,4 +32,12 @@
         <username>user2</username>
         <password>password2</password>
     </user>
+    <user>
+        <username>josant</username>
+        <password>hola</password>
+    </user>
+    <user>
+        <username>a</username>
+        <password>a</password>
+    </user>
 </users>

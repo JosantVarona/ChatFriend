@@ -3,6 +3,7 @@ package dam.JosantVarona.view;
 import dam.JosantVarona.App;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
@@ -30,4 +31,22 @@ public class ControllerStar extends Controller implements Initializable {
         System.out.println(Scenes.STAR);
         App.currenController.chageScene(Scenes.LOGIN,null);
     }
+    @FXML
+    /**
+     * metodo para que ilumine la imagen
+     */
+    public void initialize() {
+        image.setOnMouseEntered(event -> {
+            image.setOpacity(0.7);
+            Glow glow = new Glow(0.5);
+            image.setEffect(glow);
+        });
+
+
+        image.setOnMouseExited(event -> {
+            image.setOpacity(1.0);
+            image.setEffect(null);
+        });
+    }
+
 }

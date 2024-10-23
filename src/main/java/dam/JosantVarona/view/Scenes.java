@@ -5,7 +5,7 @@ public enum Scenes {
     STAR("view/star.fxml"),
     LOGIN("view/login.fxml"),
     MAIN("view/main.fxml"),
-    ADD("view/add.fxml");
+    CHAT("view/chat.fxml");
 
     private String url;
     Scenes (String url){

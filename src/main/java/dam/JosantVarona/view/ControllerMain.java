@@ -1,22 +1,39 @@
 package dam.JosantVarona.view;
 
 import dam.JosantVarona.App;
+import dam.JosantVarona.Datos.usuariosXML;
+import dam.JosantVarona.model.User;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ControllerMain extends Controller implements Initializable {
     @FXML
-    private ImageView image;
-    @FXML
     private ImageView arrow;
-    @Override
-    public void onOpen(Object input) throws IOException {
+    @FXML
+    private TableView<User> tableView;
+    @FXML
+    private TableColumn <User,String> columnick;
 
+    private ObservableList<User> usuariosc;
+    @Override
+    public void onOpen(Object input) throws Exception {
+        User usario = (User) input;
+        usuariosXML usuariosXML = new usuariosXML();
+        List<User> usuarios = usuariosXML.getUsers();
+        usuarios.remove(usario);
+        this.usuariosc = FXCollections.observableArrayList(usuarios);
+        tableView.setItems(this.usuariosc);
     }
 
     @Override
@@ -26,15 +43,18 @@ public class ControllerMain extends Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        columnick.setCellValueFactory(User -> new SimpleStringProperty(User.getValue().username));
+    }
 
-    }
-    public void goToAdd() throws IOException {
-        System.out.println(Scenes.ADD);
-        App.currenController.chageScene(Scenes.ADD,null);
-    }
     public void goToLogin() throws IOException{
         App.currenController.chageScene(Scenes.LOGIN,null);
         //aqui cerramos la intancia
     }
+    @FXML
+    private void chatContac() throws Exception {
+        User usuario = tableView.getSelectionModel().getSelectedItem();
+        App.currenController.openModalv(Scenes.CHAT, "Chat abierto", this, usuario);
+    }
+
 
 }

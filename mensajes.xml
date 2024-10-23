@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mensajes>
+    <mensaje>
+        <emisor>user1</emisor>
+        <receptor>josant</receptor>
+        <mensaje>patata</mensaje>
+        <horafecha>2020-01-01 12:00:00</horafecha>
+    </mensaje>
+</mensajes>

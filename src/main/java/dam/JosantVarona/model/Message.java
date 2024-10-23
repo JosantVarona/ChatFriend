@@ -8,10 +8,8 @@ public class Message {
     private String mensaje;
     private LocalDateTime horafecha;
 
-    public Message(User receptor, User emisor, String message) {
-        this.receptor = receptor;
-        this.emisor = emisor;
-        this.mensaje = message;
+    public Message() {
+
     }
 
     public Message(User receptor, User emisor, String mensaje, LocalDateTime horafecha) {

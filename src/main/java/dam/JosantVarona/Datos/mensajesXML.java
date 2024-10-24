@@ -1,19 +1,22 @@
 package dam.JosantVarona.Datos;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import java.io.File;
+import dam.JosantVarona.model.Message;
+
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import java.util.ArrayList;
+import java.util.List;
 
-public class mensajesXML {
-    private File archivo = new File("mensajes.xml");
-
-    public void guardarMensajesXML() throws Exception {
-        JAXBContext context = JAXBContext.newInstance(mensajesXML.class);
-        Marshaller m = context.createMarshaller();
-        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        m.marshal(this, archivo);
+@XmlRootElement(name = "mensajes")
+    public class mensajesXML {
+    private List<Message> mesajes = new ArrayList<>();
+    @XmlElement(name = "mensaje")
+    public List<Message>getMesaje(){
+        return mesajes;
     }
-
+    public void setMesajes(List<Message> mesajes){
+        this.mesajes = mesajes;
+    }
 }

@@ -3,6 +3,7 @@ package dam.JosantVarona.view;
 import dam.JosantVarona.App;
 import dam.JosantVarona.model.User;
 import dam.JosantVarona.Datos.usuariosXML;
+import dam.JosantVarona.model.userSesion;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -68,6 +69,7 @@ public class ControllerLogin extends Controller implements Initializable {
         //
         if (loginCuenta()!= null){
             App.currenController.chageScene(Scenes.MAIN,loginCuenta());
+            userSesion.getInstancia().logIn(loginCuenta());
         } else {
             AppController.alertlogin();
         }
@@ -78,7 +80,7 @@ public class ControllerLogin extends Controller implements Initializable {
         if (recogerDatos() != null){
             App.currenController.chageScene(Scenes.MAIN,recogerDatos());
             resgitrar.añadirUsuario(recogerDatos());
-            //Crear instancia
+            userSesion.getInstancia().logIn(recogerDatos());
         } else {
             AppController.alertaResgis();
         }

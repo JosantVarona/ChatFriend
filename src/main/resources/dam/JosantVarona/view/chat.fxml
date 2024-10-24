@@ -15,8 +15,8 @@
          <ListView fx:id="messages" prefHeight="350.0" prefWidth="580.0" />
          <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
-               <TextField fx:id="mensaje" prefHeight="54.0" prefWidth="521.0" />
-               <Button fx:id="enviar" mnemonicParsing="false" text="ENVIAR" />
+               <TextField fx:id="contenido" prefHeight="54.0" prefWidth="521.0" />
+               <Button fx:id="enviar" mnemonicParsing="false" onAction="#enviarMensaje" text="ENVIAR" />
             </children>
          </HBox>
 

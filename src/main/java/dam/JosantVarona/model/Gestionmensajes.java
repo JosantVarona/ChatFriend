@@ -37,9 +37,11 @@ public class Gestionmensajes {
         // Obtener la lista de mensajes deserializados
         List<Message> mensajes = wrapper.getMesaje();
         for (Message mensaje : mensajes) {
-            if ((mensaje.getEmisor().equals(emisor) && mensaje.getReceptor().equals(receptor)) ||
-                    (mensaje.getEmisor().equals(receptor) && mensaje.getReceptor().equals(emisor))) {
-                mensajesEmisorReceptor.add(mensaje);
+            if (mensaje.getEmisor() != null && mensaje.getReceptor() != null) {
+                if ((mensaje.getEmisor().equals(emisor) && mensaje.getReceptor().equals(receptor)) ||
+                        (mensaje.getEmisor().equals(receptor) && mensaje.getReceptor().equals(emisor))) {
+                    mensajesEmisorReceptor.add(mensaje);
+                }
             }
         }
         return mensajesEmisorReceptor;

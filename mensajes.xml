@@ -44,4 +44,37 @@
         </emisor>
         <contenido>hola</contenido>
     </mensaje>
+    <mensaje>
+        <receptor>
+            <username>user1</username>
+            <password>password1</password>
+        </receptor>
+        <emisor>
+            <username>josant</username>
+            <password>HOLA</password>
+        </emisor>
+        <contenido>HOLA</contenido>
+    </mensaje>
+    <mensaje>
+        <receptor>
+            <username>user1</username>
+            <password>password1</password>
+        </receptor>
+        <emisor>
+            <username>josant</username>
+            <password>HOLA</password>
+        </emisor>
+        <contenido>bien</contenido>
+    </mensaje>
+    <mensaje>
+        <receptor>
+            <username>josant</username>
+            <password>HOLA</password>
+        </receptor>
+        <emisor>
+            <username>user1</username>
+            <password>password1</password>
+        </emisor>
+        <contenido>estamos bien ?</contenido>
+    </mensaje>
 </mensajes>

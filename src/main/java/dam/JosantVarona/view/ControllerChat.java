@@ -13,6 +13,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.TextField;
 
+import javax.xml.bind.JAXBException;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -27,11 +29,15 @@ public class ControllerChat extends Controller implements Initializable {
     private TextField contenido;
 
     private ObservableList<Message> mess;
+    private User receptor = null;
 
     @Override
     public void onOpen(Object input) throws Exception {
         Gestionmensajes gestion = new Gestionmensajes();
-        User receptor = (User) input;
+
+        User aux = (User) input;
+        receptor = aux;
+
         User emisor = userSesion.getInstancia().getUsuarioIniciado();
 
         List<Message> messageslist = gestion.getMensajes(emisor, receptor);
@@ -69,11 +75,20 @@ public class ControllerChat extends Controller implements Initializable {
             }
         });
     }
+
     @FXML
-    private Message enviarMensaje(){
-        Message nuevoMensaje = new Message();
+    private void enviarMensaje() throws IOException, JAXBException {
+        User recep = receptor;
+        User emisor = userSesion.getInstancia().getUsuarioIniciado();
         String contenidoMensaje = contenido.getText();
 
-        return nuevoMensaje;
+        if (!contenidoMensaje.isEmpty()) {  // Asegúrate de no enviar mensajes vacíos
+            Message nuevoMensaje = new Message(recep, emisor, contenidoMensaje);
+            Gestionmensajes gestionmensajes = new Gestionmensajes();
+            gestionmensajes.enviarMensakes(nuevoMensaje);
+            mess.add(nuevoMensaje);
+            messages.refresh();
+            contenido.clear();
+        }
     }
 }

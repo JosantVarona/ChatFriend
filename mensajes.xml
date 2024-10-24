@@ -1,9 +1,47 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <mensajes>
     <mensaje>
-        <emisor>user1</emisor>
-        <receptor>josant</receptor>
-        <mensaje>patata</mensaje>
-        <horafecha>2020-01-01 12:00:00</horafecha>
+        <receptor>
+            <username>juan</username>
+            <password>1234</password>
+        </receptor>
+        <emisor>
+            <username>jose</username>
+            <password>hola</password>
+        </emisor>
+        <contenido>Estas bien?</contenido>
+    </mensaje>
+    <mensaje>
+        <receptor>
+            <username>juan</username>
+            <password>1234</password>
+        </receptor>
+        <emisor>
+            <username>jose</username>
+            <password>hola</password>
+        </emisor>
+        <contenido>hola</contenido>
+    </mensaje>
+    <mensaje>
+        <receptor>
+            <username>josant</username>
+            <password>HOLA</password>
+        </receptor>
+        <emisor>
+            <username>user1</username>
+            <password>password1</password>
+        </emisor>
+        <contenido>hola</contenido>
+    </mensaje>
+    <mensaje>
+        <receptor>
+            <username>user1</username>
+            <password>password1</password>
+        </receptor>
+        <emisor>
+            <username>josant</username>
+            <password>HOLA</password>
+        </emisor>
+        <contenido>hola</contenido>
     </mensaje>
 </mensajes>

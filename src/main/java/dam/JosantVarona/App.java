@@ -1,5 +1,6 @@
 package dam.JosantVarona;
 
+import dam.JosantVarona.model.User;
 import dam.JosantVarona.view.AppController;
 import dam.JosantVarona.view.Controller;
 import dam.JosantVarona.view.Scenes;

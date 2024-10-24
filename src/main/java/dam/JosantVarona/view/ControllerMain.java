@@ -3,6 +3,7 @@ package dam.JosantVarona.view;
 import dam.JosantVarona.App;
 import dam.JosantVarona.Datos.usuariosXML;
 import dam.JosantVarona.model.User;
+import dam.JosantVarona.model.userSesion;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -48,6 +49,7 @@ public class ControllerMain extends Controller implements Initializable {
 
     public void goToLogin() throws IOException{
         App.currenController.chageScene(Scenes.LOGIN,null);
+        userSesion.getInstancia().logOut();
         //aqui cerramos la intancia
     }
     @FXML

@@ -1,12 +1,21 @@
 package dam.JosantVarona.model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDateTime;
 
+@XmlRootElement(name = "mensaje")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Message {
-    private User receptor;
-    private User emisor;
-    private String mensaje;
-    private LocalDateTime horafecha;
+    @XmlElement
+    public User receptor;
+    @XmlElement
+    public User emisor;
+    @XmlElement
+    public String contenido;
+    public LocalDateTime horafecha;
 
     public Message() {
 
@@ -15,8 +24,14 @@ public class Message {
     public Message(User receptor, User emisor, String mensaje, LocalDateTime horafecha) {
         this.receptor = receptor;
         this.emisor = emisor;
-        this.mensaje = mensaje;
+        this.contenido = mensaje;
         this.horafecha = horafecha;
+    }
+
+    public Message(User receptor, User emisor, String contenido) {
+        this.receptor = receptor;
+        this.emisor = emisor;
+        this.contenido = contenido;
     }
 
     public User getReceptor() {
@@ -35,12 +50,12 @@ public class Message {
         this.emisor = emisor;
     }
 
-    public String getMensaje() {
-        return mensaje;
+    public String getContenido() {
+        return contenido;
     }
 
-    public void setMensaje(String mensaje) {
-        this.mensaje = mensaje;
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
     }
 
     public LocalDateTime getHorafecha() {

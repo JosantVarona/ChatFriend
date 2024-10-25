@@ -32,7 +32,7 @@ public class usuariosXML {
             guardarUsuario(usuarios);
         } catch (JAXBException e) {
             throw new RuntimeException(e);
-        }
+        }   
 
 
     }

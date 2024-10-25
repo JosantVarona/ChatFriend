@@ -77,4 +77,37 @@
         </emisor>
         <contenido>estamos bien ?</contenido>
     </mensaje>
+    <mensaje>
+        <receptor>
+            <username>josant</username>
+            <password>HOLA</password>
+        </receptor>
+        <emisor>
+            <username>user1</username>
+            <password>password1</password>
+        </emisor>
+        <contenido>te camelo</contenido>
+    </mensaje>
+    <mensaje>
+        <receptor>
+            <username>user2</username>
+            <password>password2</password>
+        </receptor>
+        <emisor>
+            <username>user1</username>
+            <password>password1</password>
+        </emisor>
+        <contenido>buenos dis</contenido>
+    </mensaje>
+    <mensaje>
+        <receptor>
+            <username>josant</username>
+            <password>HOLA</password>
+        </receptor>
+        <emisor>
+            <username>user1</username>
+            <password>password1</password>
+        </emisor>
+        <contenido>hola</contenido>
+    </mensaje>
 </mensajes>

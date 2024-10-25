@@ -1,0 +1,7 @@
+user1: hola
+josant: hola
+josant: HOLA
+josant: bien
+user1: estamos bien ?
+user1: te camelo
+user1: hola

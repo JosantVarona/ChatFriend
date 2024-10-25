@@ -1,0 +1,4 @@
+Chat entre user1 y josant
+Cantidad de mensajes enviados: 7
+Cantidad de mensajes enviados por emisor: 4
+Cantidad de mensajes enviados por receptor: 3

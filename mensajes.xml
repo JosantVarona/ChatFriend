@@ -2,112 +2,46 @@
 <mensajes>
     <mensaje>
         <receptor>
-            <username>juan</username>
-            <password>1234</password>
+            <username>josant</username>
+            <password>73c3de4175449987ef6047f6e0bea91c1036a8599b43113b3f990104ab294a47</password>
         </receptor>
         <emisor>
-            <username>jose</username>
-            <password>hola</password>
+            <username>user1</username>
+            <password>0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e</password>
         </emisor>
-        <contenido>Estas bien?</contenido>
-    </mensaje>
-    <mensaje>
-        <receptor>
-            <username>juan</username>
-            <password>1234</password>
-        </receptor>
-        <emisor>
-            <username>jose</username>
-            <password>hola</password>
-        </emisor>
-        <contenido>hola</contenido>
+        <contenido>Hola</contenido>
     </mensaje>
     <mensaje>
         <receptor>
             <username>josant</username>
-            <password>HOLA</password>
+            <password>73c3de4175449987ef6047f6e0bea91c1036a8599b43113b3f990104ab294a47</password>
         </receptor>
         <emisor>
             <username>user1</username>
-            <password>password1</password>
+            <password>0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e</password>
         </emisor>
-        <contenido>hola</contenido>
+        <contenido>Como estas?</contenido>
     </mensaje>
     <mensaje>
         <receptor>
             <username>user1</username>
-            <password>password1</password>
+            <password>0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e</password>
         </receptor>
         <emisor>
             <username>josant</username>
-            <password>HOLA</password>
+            <password>73c3de4175449987ef6047f6e0bea91c1036a8599b43113b3f990104ab294a47</password>
         </emisor>
-        <contenido>hola</contenido>
+        <contenido>Hola</contenido>
     </mensaje>
     <mensaje>
         <receptor>
             <username>user1</username>
-            <password>password1</password>
+            <password>0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e</password>
         </receptor>
         <emisor>
             <username>josant</username>
-            <password>HOLA</password>
+            <password>73c3de4175449987ef6047f6e0bea91c1036a8599b43113b3f990104ab294a47</password>
         </emisor>
-        <contenido>HOLA</contenido>
-    </mensaje>
-    <mensaje>
-        <receptor>
-            <username>user1</username>
-            <password>password1</password>
-        </receptor>
-        <emisor>
-            <username>josant</username>
-            <password>HOLA</password>
-        </emisor>
-        <contenido>bien</contenido>
-    </mensaje>
-    <mensaje>
-        <receptor>
-            <username>josant</username>
-            <password>HOLA</password>
-        </receptor>
-        <emisor>
-            <username>user1</username>
-            <password>password1</password>
-        </emisor>
-        <contenido>estamos bien ?</contenido>
-    </mensaje>
-    <mensaje>
-        <receptor>
-            <username>josant</username>
-            <password>HOLA</password>
-        </receptor>
-        <emisor>
-            <username>user1</username>
-            <password>password1</password>
-        </emisor>
-        <contenido>te camelo</contenido>
-    </mensaje>
-    <mensaje>
-        <receptor>
-            <username>user2</username>
-            <password>password2</password>
-        </receptor>
-        <emisor>
-            <username>user1</username>
-            <password>password1</password>
-        </emisor>
-        <contenido>buenos dis</contenido>
-    </mensaje>
-    <mensaje>
-        <receptor>
-            <username>josant</username>
-            <password>HOLA</password>
-        </receptor>
-        <emisor>
-            <username>user1</username>
-            <password>password1</password>
-        </emisor>
-        <contenido>hola</contenido>
+        <contenido>Estamos bien</contenido>
     </mensaje>
 </mensajes>

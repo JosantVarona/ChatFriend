@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
 
-
+//Esta clase es para hacer elemento raiz users del xml
 @XmlRootElement (name = "users")
 public class conexionXMLUsuario {
         private List<User> users = new ArrayList<>();

@@ -34,7 +34,7 @@ public class App extends Application {
     public static void setRoot(String fxml) throws IOException {
         //scene.setRoot(loadFXML(fxml));
     }
-
+    //Lanza el progama
     public static void main(String[] args) {
         launch();
     }

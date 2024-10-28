@@ -47,11 +47,20 @@ public class ControllerMain extends Controller implements Initializable {
         columnick.setCellValueFactory(User -> new SimpleStringProperty(User.getValue().username));
     }
 
+    /**
+     * Muestra los que estan introdicido en el xml
+     * @throws IOException
+     */
     public void goToLogin() throws IOException{
         App.currenController.chageScene(Scenes.LOGIN,null);
         userSesion.getInstancia().logOut();
         //aqui cerramos la intancia
     }
+
+    /**
+     * abre una pantalla con la combersacion de los usuarios
+     * @throws Exception
+     */
     @FXML
     private void chatContac() throws Exception {
         User usuario = tableView.getSelectionModel().getSelectedItem();

@@ -27,6 +27,9 @@ public class AppController extends Controller implements Initializable {
     private Controller centreController;
 
     @Override
+    /**
+     * Able la primera pagina con el enun
+     */
     public void onOpen(Object input) throws IOException {
         chageScene(Scenes.STAR,null);
 
@@ -36,7 +39,7 @@ public class AppController extends Controller implements Initializable {
     public void onClose(Object output) {
 
     }
-
+    //Cambia de escena
     public void chageScene(Scenes scenes,Object data) throws IOException {
         View view = loadFXML(scenes);
         borderPane.setCenter(view.scene);
@@ -53,6 +56,7 @@ public class AppController extends Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+    //Muestra la escena
     public static View loadFXML(Scenes scenes)throws IOException {
         String url = scenes.getURL();
         FXMLLoader loader = new FXMLLoader(App.class.getResource(url));
@@ -62,7 +66,9 @@ public class AppController extends Controller implements Initializable {
         view.scene =p;
         view.controller=c;
         return view;
-    }public void openModalv(Scenes scenes, String tilte, Controller parent, Object data) throws Exception {
+    }
+    //Abre una ventana emergente
+    public void openModalv(Scenes scenes, String tilte, Controller parent, Object data) throws Exception {
         View view = loadFXML(scenes);
         Stage stage = new Stage();
         stage.setTitle(tilte);
@@ -73,6 +79,7 @@ public class AppController extends Controller implements Initializable {
         view.controller.onOpen(data);
         stage.showAndWait();
     }
+    //Alertas
     public static void alertaResgis(){
         alert.setContentText("Esta cuenta ya ha sido registrada o los datos son invalidos");
         alert.setWidth(500);
@@ -83,8 +90,5 @@ public class AppController extends Controller implements Initializable {
         alert.setContentText("Datos incorrectos");
         alert.showAndWait();
     }
-    /*@FXML
-    private void closeWindow(Event event) {
-        ((Node) (event.getSource())).getScene().getWindow().hide();
-    }*/
+
 }

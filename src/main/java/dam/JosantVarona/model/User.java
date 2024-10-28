@@ -4,6 +4,8 @@
     import javax.xml.bind.annotation.XmlAccessorType;
     import javax.xml.bind.annotation.XmlElement;
     import javax.xml.bind.annotation.XmlRootElement;
+    import java.security.MessageDigest;
+    import java.security.NoSuchAlgorithmException;
     import java.util.Objects;
 
     @XmlRootElement (name = "user")
@@ -56,5 +58,25 @@
                     ", password='" + password + '\'' +
                     '}';
 
+        }
+        public static String segurity(String pass){
+            String result = null;
+            try {
+
+                MessageDigest digest = MessageDigest.getInstance("SHA-256");
+
+                byte[] hashedBytes = digest.digest(pass.getBytes());
+
+                StringBuilder stringBuilder = new StringBuilder();
+                for (byte b : hashedBytes) {
+                    stringBuilder.append(String.format("%02x", b));
+                }
+                String hashedPassword = stringBuilder.toString();
+
+                result = hashedPassword;
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+            return result;
         }
     }

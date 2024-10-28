@@ -11,9 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class usuariosXML {
-
+    //Variable que tiene el archivo xml de usuarios.
     private File archivo = new File("users.xml");
 
+    /**
+     * Guarda los usuarios viejos y nuevos
+     * @param users list de todos los usuarios
+     * @throws JAXBException
+     */
     public void guardarUsuario(List<User> users) throws JAXBException {
         conexionXMLUsuario wrapper = new conexionXMLUsuario();
         ;
@@ -25,6 +30,11 @@ public class usuariosXML {
 
     }
 
+    /**
+     * Añade un usuario nuevo a la list
+     * @param user usuario nuevo
+     * @throws Exception
+     */
     public void añadirUsuario(User user) throws Exception {
         List<User> usuarios = getUsers();
         usuarios.add(user);
@@ -51,6 +61,10 @@ public class usuariosXML {
         }
     }
 
+    /**
+     * Crea el archivo xml
+     * @throws Exception
+     */
     public void crearXMLInicial() throws Exception {
         if (!archivo.exists()) {
             archivo.createNewFile();

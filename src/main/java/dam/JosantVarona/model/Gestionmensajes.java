@@ -12,12 +12,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Gestionmensajes {
+    //Esta variable es para saber donde esta el archivo xml de los mensajes
     public File archivo = new File("mensajes.xml");
 
     /*public Gestionmensajes() {
         this.mensajes = new ArrayList<>();
     }*/
 
+    /**
+     * Este metodo trae todos los mensajes que tenga el xml y añade el nuevo
+     * @param message nuevo mesajes del usuario
+     * @throws JAXBException
+     */
     public void enviarMensakes(Message message) throws JAXBException {
         JAXBContext context = JAXBContext.newInstance(mensajesXML.class);
         Unmarshaller um = context.createUnmarshaller();
@@ -28,6 +34,13 @@ public class Gestionmensajes {
         guardarMensajesXML(mensajes);
     }
 
+    /**
+     * Este metodo filtra los mensajes y trae solo los del emisor y el receptor.
+     * @param emisor Usuario iniciado
+     * @param receptor contecto elegido
+     * @return list de mensajes del emisor y el receptor
+     * @throws JAXBException
+     */
     public List<Message> getMensajes(User emisor, User receptor) throws JAXBException {
         List<Message> mensajesEmisorReceptor = new ArrayList<>();
         JAXBContext context = JAXBContext.newInstance(mensajesXML.class);
@@ -46,8 +59,12 @@ public class Gestionmensajes {
         }
         return mensajesEmisorReceptor;
     }
-    //Investigar como guardar el mensaje y cargarlo
 
+    /**
+     * Guarda todos los mensajes nuevo y viejos
+     * @param mensa list de todos los mensajes nuevo y viejos
+     * @throws JAXBException
+     */
     public void guardarMensajesXML(List<Message> mensa) throws JAXBException {
         JAXBContext context = JAXBContext.newInstance(mensajesXML.class);
 

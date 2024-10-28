@@ -38,23 +38,37 @@ public class ControllerLogin extends Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
+    /**
+     * Recoge todos los datos
+     * @return usuario nuevo
+     * @throws Exception
+     */
     private User recogerDatos() throws Exception {
         User result = null;
         String nick = user.getText();
         String pass1 = pass.getText();
-        User aux = new User(nick,pass1);
-        if (nick != null && !nick.trim().isEmpty() && pass1 != null && !pass1.trim().isEmpty()) {
+        String security = User.segurity(pass1);
+        User aux = new User(nick,security);
+        if (nick != null && !nick.trim().isEmpty()) {
             if (!yaInsertado(aux)) {
                 result = aux;
             }
         }
         return result;
     }
+
+    /**
+     * Comprueba el usuario introducido
+     * @return usuario ya iniciado
+     * @throws Exception
+     */
     private User loginCuenta() throws Exception {
         User login = null;
         String nick = user.getText();
         String pass1 = pass.getText();
-        User aux = new User(nick,pass1);
+        String security = User.segurity(pass1);
+        User aux = new User(nick,security);
         if (login(aux)){
             if (aux!= null){
                 login = aux;
@@ -64,6 +78,10 @@ public class ControllerLogin extends Controller implements Initializable {
     }
 
 
+    /**
+     * Cambia de escena
+     * @throws Exception
+     */
     @FXML
     private void goToMain() throws Exception {
         //
@@ -74,6 +92,11 @@ public class ControllerLogin extends Controller implements Initializable {
             AppController.alertlogin();
         }
     }
+
+    /**
+     * registra el usuario y cmabia de escena
+     * @throws Exception
+     */
     @FXML
     private void goToMainR() throws Exception {
         usuariosXML resgitrar = new usuariosXML();
@@ -85,6 +108,13 @@ public class ControllerLogin extends Controller implements Initializable {
             AppController.alertaResgis();
         }
     }
+
+    /**
+     * comprueba si el usuario ya ha sido introducido
+     * @param usIntroducido
+     * @return el usuario no esta introducido
+     * @throws Exception
+     */
     private boolean yaInsertado(User usIntroducido) throws Exception {
         boolean result = false;
         usuariosXML usuariosRegistrados= new usuariosXML();
@@ -96,6 +126,13 @@ public class ControllerLogin extends Controller implements Initializable {
         }
         return result;
     }
+
+    /**
+     * Comprueva si el usuario es igual al que ya esta registrado
+     * @param user
+     * @return el usuario no esta registrado si es false
+     * @throws Exception
+     */
     private boolean login(User user) throws Exception {
         boolean result = false;
         if (user !=null){

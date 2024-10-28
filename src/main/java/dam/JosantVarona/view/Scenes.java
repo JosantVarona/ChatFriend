@@ -1,5 +1,6 @@
 package dam.JosantVarona.view;
 
+//Clase Para las url de los fxml
 public enum Scenes {
     ROOT("view/layout.fxml"),
     STAR("view/star.fxml"),

@@ -1,5 +1,10 @@
 package dam.JosantVarona.model;
 
+/**
+ * Esta Clase hace crea una instacia que la guarda en la memoria ram
+ * y esto hace que usaemos esta variable en todo el programa,
+ * en esta caso es para manter la sesion inicida del usuario
+ */
 public class userSesion {
     private static userSesion _instance;
     private static User userLoged;

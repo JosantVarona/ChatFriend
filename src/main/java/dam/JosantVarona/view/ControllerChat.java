@@ -56,6 +56,7 @@ public class ControllerChat extends Controller implements Initializable {
 
     }
 
+    //Muestra las combersaciones del usuario y receptor
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -84,6 +85,12 @@ public class ControllerChat extends Controller implements Initializable {
      filtradoUsuario.setValue("Ambos");
     }
 
+
+    /**
+     * Metodo para enviar el mensaje y mostrarlo por pantalla
+     * @throws IOException
+     * @throws JAXBException
+     */
     @FXML
     private void enviarMensaje() throws IOException, JAXBException {
         User recep = receptor;
@@ -100,6 +107,11 @@ public class ControllerChat extends Controller implements Initializable {
         }
     }
 
+    /**
+     * Metodo para hacer un texto plano de la combersacion
+     * @throws IOException
+     * @throws JAXBException
+     */
     @FXML
     public void transformarTXT() throws IOException, JAXBException {
         if (mess != null) {
@@ -113,6 +125,12 @@ public class ControllerChat extends Controller implements Initializable {
             writer.close();
         }
     }
+
+    /**
+     * Filta los mensajes por palabra
+     * @throws IOException
+     * @throws JAXBException
+     */
     @FXML
     public void filtrar() throws IOException, JAXBException {
         ObservableList<Message> filteredMessages = mess.stream()
@@ -121,6 +139,12 @@ public class ControllerChat extends Controller implements Initializable {
         messages.setItems(filteredMessages);
         messages.refresh();
     }
+
+    /**
+     * filtra los mensajes por Usuario
+     * @throws IOException
+     * @throws JAXBException
+     */
     @FXML
     public void filtrareEmisor () throws IOException, JAXBException {
         User recep = receptor;
@@ -147,6 +171,12 @@ public class ControllerChat extends Controller implements Initializable {
                 break;
         }
     }
+
+    /**
+     * Crea un resumen en texto plano de los mensajes que han enviado los usuarios
+     * @throws IOException
+     * @throws JAXBException
+     */
     @FXML
     public void resumenChat () throws IOException, JAXBException {
         User receptor1 = receptor;
